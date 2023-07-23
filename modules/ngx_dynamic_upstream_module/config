@@ -1,0 +1,29 @@
+ngx_addon_name=ngx_dynamic_upstream_module
+
+DYNAMIC_UPSTREAM_SRCS="                                          \
+                $ngx_addon_dir/ngx_dynamic_upstream_module.c \
+                $ngx_addon_dir/ngx_dynamic_upstream_op.c     \
+                $ngx_addon_dir/ngx_inet_slab.c               \
+               "
+
+DYNAMIC_UPSTREAM_DEPS="                                          \
+                $ngx_addon_dir/ngx_dynamic_upstream_module.h \
+                $ngx_addon_dir/ngx_dynamic_upstream_op.h     \
+                $ngx_addon_dir/ngx_inet_slab.h               \
+               "
+CFLAGS="$CFLAGS -I/opt/app/nginx-reverse-proxy/mysql/include" 
+CORE_LIBS="$CORE_LIBS -L/opt/app/nginx-reverse-proxy/mysql/lib64 -lmysqlclient" 
+
+if test -n "$ngx_module_link"; then
+    ngx_module_type=HTTP
+    ngx_module_name=$ngx_addon_name
+    ngx_module_incs=
+    ngx_module_deps="$DYNAMIC_UPSTREAM_DEPS"
+    ngx_module_srcs="$DYNAMIC_UPSTREAM_SRCS"
+    ngx_module_libs=
+   . auto/module
+else
+    HTTP_MODULES="$HTTP_MODULES $ngx_addon_name"
+    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $DYNAMIC_UPSTREAM_SRCS"
+    NGX_ADDON_DEPS="$NGX_ADDON_DEPS $DYNAMIC_UPSTREAM_DEPS"
+fi

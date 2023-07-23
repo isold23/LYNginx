@@ -1,0 +1,2 @@
+log_format  domain  '$remote_addr $host $server_name $remote_user $remote_user [$time_local] "$request" '
+                  '$status $body_bytes_sent "$http_referer" "$http_user_agent" $request_time' ' placeholder [$upstream_addr] [$upstream_status] $upstream_connect_time $upstream_response_time ';
