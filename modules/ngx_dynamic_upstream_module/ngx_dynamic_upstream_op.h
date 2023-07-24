@@ -1,7 +1,4 @@
 
-/*
- *  * Copyright (C) Sogou, Inc.
-**/
 
 #ifndef NGX_DYNAMIC_UPSTREAM_OP_H
 #define NGX_DYNAMIC_UPSTREAM_OP_H
