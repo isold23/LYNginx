@@ -1,7 +1,4 @@
 
-/*
- *  * Copyright (C) Sogou, Inc.
-**/
 
        #include <sys/types.h>
               #include <unistd.h>
