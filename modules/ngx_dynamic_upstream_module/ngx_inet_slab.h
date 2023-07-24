@@ -1,7 +1,4 @@
 
-/*
- *  * Copyright (C) Sogou, Inc.
-**/
 
 #ifndef NGX_DYNAMIC_UPSTEAM_INET_SLAB_H
 #define NGX_DYNAMIC_UPSTEAM_INET_SLAB_H
