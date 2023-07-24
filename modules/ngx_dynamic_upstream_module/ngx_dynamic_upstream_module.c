@@ -1,6 +1,4 @@
-/*
- *  * Copyright (C) Sogou, Inc.
-**/
+
 
 #include <ngx_config.h>
 #include <ngx_core.h>
@@ -10,10 +8,10 @@
 #include "ngx_dynamic_upstream_op.h"
 
 static ngx_str_t                flag = ngx_string("mysql");
-static ngx_str_t                host = ngx_string("10.152.72.13");
-static ngx_int_t                port = 3617;
-static ngx_str_t                user = ngx_string("biznginx");
-static ngx_str_t                password = ngx_string("QAZwsxEDC");
+static ngx_str_t                host = ngx_string("127.0.0.1");
+static ngx_int_t                port = 3306;
+static ngx_str_t                user = ngx_string("user");
+static ngx_str_t                password = ngx_string("password");
 //flag : mysql or conf
 static u_char                   sz_flag[10] = {0};
 static u_char                   sz_host[20] = {0};
